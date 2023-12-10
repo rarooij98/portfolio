@@ -128,24 +128,36 @@ function App() {
   
   const location = useLocation();
   
+  // const GetProject = () => {
+  //   let { project } = useParams();
+  //   console.log(project);
+  //   const currentProject = projects.find((x) => x.name === project);
+  //   return <Single project={currentProject} key={currentProject.name} />;
+  // };
+
   const GetProject = () => {
     const { project } = useParams();
-    const currentProject = projects.find(x => x.name === project);
-    return <Single project={currentProject} key={currentProject.name} />
+    console.log('Project is: ', project);
+  
+    const currentProject = projects.find((x) => x.name === project);
+    if (!currentProject) {
+      // Handle case when project is not found, for example, redirect to a 404 page
+      return <div>Project not found</div>;
+    }
+    return <Single project={currentProject} key={currentProject.name} />;
   };
   
   return (
     <div className="App">
       <AnimatePresence initial={true} mode='wait'>
           <Routes location={location} key={location.pathname}>
-            <Route
-              path='/'
-              element={<Home projects={projects} />}
-            />
-            <Route
-              path='/:project'
-              element={<GetProject />}
-            />
+            
+            {/* <Route path='/' element={<Home projects={projects} />}/>
+            <Route path='/:project' element={<GetProject />}/> */}
+            
+            <Route path={`${process.env.PUBLIC_URL}/`} element={<Home projects={projects} />} />
+            <Route path={`${process.env.PUBLIC_URL}/:project`} element={<GetProject />} />
+            
           </Routes>
         </AnimatePresence>
     </div>

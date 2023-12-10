@@ -174,7 +174,7 @@ function Home(projects) {
   // Loading the model
   useEffect(() => {
     const gltfLoader = new GLTFLoader();
-    gltfLoader.load('/laptop3.gltf', (loadedGltf) => {
+    gltfLoader.load(`${process.env.PUBLIC_URL}/laptop3.gltf`, (loadedGltf) => {
       loadedGltf.scene.children.forEach((mesh) => {
         mesh.castShadow = true;
       });
@@ -236,7 +236,7 @@ function Home(projects) {
           <ScrollControls pages={2} damping={0.25} >
             <Laptop hoveredCard={hoveredCard} gltf={gltf}/>
           </ScrollControls>
-          <Environment files="/forest_blur2.hdr" />
+          <Environment files={`${process.env.PUBLIC_URL}/forest_blur2.hdr`} />
         </Canvas>
       
       {

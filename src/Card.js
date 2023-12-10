@@ -11,7 +11,7 @@ function Card ({ item }) {
   const title = capitalizeFirstLetter(string.replace(/-/g, ' '))
 
   return(
-    <Link to={`/${item.name}`} className='link'>
+    <Link to={`${process.env.PUBLIC_URL}/${item.name}`} className='link'>
       <div className='project-container' id={item.name} key={item.name}>
       
       <p className='title'>
