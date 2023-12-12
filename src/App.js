@@ -63,9 +63,9 @@ function App() {
     {name: 'color-picker', date: '25.08.2023', subject: 'React, CSS', title: `React color picker app`, link: 'https://rarooij98.github.io/ReactColorPicker', 
     linktext:'Naar live site', color: 'rgb(56, 75, 173)',
     description: 
-    `Afgelopen zomer was ik op zoek naar een project om wat meer te leren over React. Dit project sprak me meteen aan vanwege alle vrolijke kleuren! 
-    Deze color picker app is geinspireerd op deze site: https://materialuicolors.co/, en is gemaakt met behulp van de online React cursus van Colt Steele. 
-    Gebruikers kunnen kleuren kopiëren in verschillende formats (rgb, rgba, hex) en eigen custom kleurpaletten toevoegen.`,
+    `Afgelopen zomer was ik op zoek naar een project om wat te leren over Javascript frameworks. Dit React project leek me erg leuk vanwege alle vrolijke kleuren! 
+    Deze color picker app is geinspireerd op de site van Material UI Colors: https://materialuicolors.co/. 
+    Gebruikers kunnen kleuren kopiëren in verschillende formats (rgb, rgba, hex) en eigen kleurpaletten toevoegen.`,
     gallery_text_1: 
     `ColorBoxes. Tijdens dit project heb ik kennis gemaakt met de React concepten components, props en state. Elke kleur in het kleurenpalet wordt gepresenteerd door een 'ColorBox', 
     dit is een component met de props 'name' en 'color'. Om het kleurenpalet te maken wordt er gemapt over alle ColorBoxes, zodat er voor elke kleur een box wordt weergeven. 
@@ -78,26 +78,6 @@ function App() {
     gallery_text_3: 
     `NewPaletteForm. Het toevoegen van een custom kleurenpalet is mogelijk met de functie submitPalette() in het component 'NewPaletteForm'. Deze functie voegt het nieuwe palet toe aan de lijst met alle paletten. Elke kleur die toegevoegd wordt, 
     wordt eerst gevalideerd: elke kleur en naam mag maar één keer in het palet voorkomen.`
-    },
-    //& Bio AR
-    {name: 'AR-biologieboek', date: '18.11.2022', subject: 'Unity, C#, Blender', title: `AR app als aanvulling op de biologie les `, 
-    link: 'https://vimeo.com/793366968?share=copy', linktext:'Bekijk project video', color: 'rgb(128, 55, 99)',
-    description: 
-    `Als onderdeel van de minor 'Designing for Emerging Technologies' heb ik een XR/AR prototype gemaakt voor gebruik in het onderwijs. Ik heb me bezig gehouden met de vraag: Hoe zou XR leerlingen kunnen helpen om de concepten in hun biologie boeken beter te begrijpen? 
-    Ik vond biologie een mooi vak voor deze toepassing, want met een AR app kun je complexe biologische systemen zoals de werking van het zenuwstelsel visueel en begrijpelijk maken. 
-    Het doel van deze app is om lessen extra leerzaam en leuk te maken voor de leerlingen, door biologische processen 3-dimensionaal en geanimeerd te laten zien en interactief maken.`,
-    gallery_text_1: 
-    `Roer-me-niet! Tijdens dit project heb ik me gefocust op het ‘roer-me-niet’ of ‘mimosa’ plantje. Deze plant is een veel gebruikt voorbeeld in biologieboeken, waarmee je het verschil kan uitleggen tussen gedrag en een impuls, want 
-    deze plant sluit zijn bladeren als hij wordt aangeraakt. Met AR kunnen leerlingen zelf ervaren wat er gebeurt als ze de plant aanraken. `
-    ,
-    gallery_text_2: 
-    `3D-model. Ik heb het prototype gemaakt in Unity met behulp van Vuforia. Het bestaat uit een Image Target, waar een 3D model bovenop komt te staan. Op die manier komt de plant bovenop het schoolboek te staan wanneer je er naar kijkt 
-    met de AR app. Ik heb een afbeelding van het boek 'Biologie Voor Jou' voor havo 4 gebruikt als Image Target. In eerste instantie had ik een gratis asset gebruikt als 3D model, maar daarna heb ik mijn eigen Blender model gemaakt.
-    `
-    ,
-    gallery_text_3: 
-    `Interactie. Daarna heb ik aan dit model interactie en animatie toegevoegd. Dit heb ik gedaan door een paar regels C# te schrijven in een script dat ik heb toegevoegd aan de ARCamera van de scene. In dit script staat dat wanneer 
-    de plant wordt aangeraakt, deze begint te krimpen. Wanneer de plant nog een keer aangeraakt wordt de scene gereset en is de plant weer teruggegroeid.`
     },
     //& Dashboard
     {name: 'data-dashboard', date: '28.09.2023', subject: 'Python, Plotly, Streamlit', title: `Data dashboard voor elektrische laadpalen`, 
@@ -119,6 +99,26 @@ function App() {
     `Voertuigen. Wat voor voertuigen maken gebruik van deze laadpalen? Deze histogram laat de verdeling zien van de meest voorkomende elektrische automerken op basis van de voertuigenregistratie.
     De meest voorkomende merken zijn de Tesla Model 3 en Tesla Model Y, meestal in het zwart of wit. De kans is dus groot dat je deze auto wel eens bij een laadpaal hebt zien staan.`
     },
+     //& Bio AR
+     {name: 'AR-biologieboek', date: '18.11.2022', subject: 'Unity, C#, Blender', title: `AR app als aanvulling op de biologie les `, 
+     link: 'https://vimeo.com/793366968?share=copy', linktext:'Bekijk project video', color: 'rgb(128, 55, 99)',
+     description: 
+     `Als onderdeel van de minor 'Designing for Emerging Technologies' heb ik een XR/AR prototype gemaakt voor gebruik in het onderwijs. Ik heb me bezig gehouden met de vraag: Hoe zou XR leerlingen kunnen helpen om de concepten in hun biologie boeken beter te begrijpen? 
+     Ik vond biologie een mooi vak voor deze toepassing, want met een AR app kun je complexe biologische systemen zoals de werking van het zenuwstelsel visueel en begrijpelijk maken. 
+     Het doel van deze app is om lessen extra leerzaam en leuk te maken voor de leerlingen, door biologische processen 3-dimensionaal en geanimeerd te laten zien en interactief maken.`,
+     gallery_text_1: 
+     `Roer-me-niet! Tijdens dit project heb ik me gefocust op het ‘roer-me-niet’ of ‘mimosa’ plantje. Deze plant is een veel gebruikt voorbeeld in biologieboeken, waarmee je het verschil kan uitleggen tussen gedrag en een impuls, want 
+     deze plant sluit zijn bladeren als hij wordt aangeraakt. Met AR kunnen leerlingen zelf ervaren wat er gebeurt als ze de plant aanraken. `
+     ,
+     gallery_text_2: 
+     `3D-model. Ik heb het prototype gemaakt in Unity met behulp van Vuforia. Het bestaat uit een Image Target, waar een 3D model bovenop komt te staan. Op die manier komt de plant bovenop het schoolboek te staan wanneer je er naar kijkt 
+     met de AR app. Ik heb een afbeelding van het boek 'Biologie Voor Jou' voor havo 4 gebruikt als Image Target. In eerste instantie had ik een gratis asset gebruikt als 3D model, maar daarna heb ik mijn eigen Blender model gemaakt.
+     `
+     ,
+     gallery_text_3: 
+     `Interactie. Daarna heb ik aan dit model interactie en animatie toegevoegd. Dit heb ik gedaan door een paar regels C# te schrijven in een script dat ik heb toegevoegd aan de ARCamera van de scene. In dit script staat dat wanneer 
+     de plant wordt aangeraakt, deze begint te krimpen. Wanneer de plant nog een keer aangeraakt wordt de scene gereset en is de plant weer teruggegroeid.`
+     },
   ]
   
   const location = useLocation();
