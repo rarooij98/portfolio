@@ -129,7 +129,9 @@ const Laptop = forwardRef(({ hoveredCard, gltf }, ref) => {
       // Function to calculate new colors based on scroll position
       const calculateNewColor = (percentage) => {
         const startColors = ['#fffae5', '#fff8ee', '#fff9f9', '#fffcff', '#ffffff']; // Yellow
-        const endColors = ['#a9c6ff', '#c5d3ff', '#dce0fe', '#efeffe', '#ffffff']; // Blue
+        // const startColors = ['#fff1b8', '#ffebd1', '#ffeef0', '#fff7ff', '#ffffff'] // Rainbow
+        // const endColors = ['#a9c6ff', '#c5d3ff', '#dce0fe', '#efeffe', '#ffffff']; // Blue
+        const endColors = ['#beddff', '#d4e4ff', '#e6ecff', '#f4f5ff', '#ffffff']; // Blue Light
         const interpolatedColors = startColors.map((startColor, index) => {
           return chroma.scale([startColor, endColors[index]])(percentage / 100).hex();
         });
