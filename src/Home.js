@@ -44,7 +44,7 @@ const Laptop = forwardRef(({ hoveredCard, gltf }, ref) => {
     const image1 = process.env.PUBLIC_URL + '/images/color-picker.png';
     const image2 = process.env.PUBLIC_URL + '/images/navigatie-ODL.png';
     const image3 = process.env.PUBLIC_URL + '/images/AR-biologieboek.png';
-    const image4 = process.env.PUBLIC_URL + '/images/CO2-dashboard.png';
+    const image4 = process.env.PUBLIC_URL + '/images/data-dashboard.png';
     const image5 = process.env.PUBLIC_URL + '/images/school-match.png';
     const materials = [material1, material2, material3, material4, material5];
     const textures = [image1, image2, image3, image4, image5]
@@ -60,7 +60,7 @@ const Laptop = forwardRef(({ hoveredCard, gltf }, ref) => {
         meshRef.current.children[2].material = material2.current;
       } else if (hoveredCard === 'AR-biologieboek') {
         meshRef.current.children[2].material = material3.current;
-      } else if (hoveredCard === 'CO2-dashboard') {
+      } else if (hoveredCard === 'data-dashboard') {
         meshRef.current.children[2].material = material4.current;
       } else if (hoveredCard === 'school-match') {
         meshRef.current.children[2].material = material5.current;

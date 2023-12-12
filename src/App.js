@@ -100,45 +100,31 @@ function App() {
     de plant wordt aangeraakt, deze begint te krimpen. Wanneer de plant nog een keer aangeraakt wordt de scene gereset en is de plant weer teruggegroeid.`
     },
     //& Dashboard
-    {name: 'CO2-dashboard', date: '28.09.2023', subject: 'Python, Plotly, Streamlit', title: `Live dashboard met data over hotels`, 
-    link: 'https://github.com/rarooij98', linktext:'Naar live site', color: 'rgb(255 252 247)',
+    {name: 'data-dashboard', date: '28.09.2023', subject: 'Python, Plotly, Streamlit', title: `Data dashboard voor elektrische laadpalen`, 
+    link: 'https://elektrische-laadpalen-dashboard.streamlit.app/', linktext:'Naar live site', color: 'rgb(112, 159, 219)',
     description: 
-    `Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC,
-    making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of
-    the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical
-    literature, discovered the undoubtable source. Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of "de Finibus Bonorum et
-    Malorum" (The Extremes of Good and Evil) by Cicero, written in 45 BC. This book is a treatise on the theory of ethics, very popular
-    during the Renaissance. The first line of Lorem Ipsum, "Lorem ipsum dolor sit amet..", comes from a line in section 1.10.32.`,
+    `Tijdens de minor Data Science aan de HvA heb ik in een klein team van studenten mogen werken aan interessante cases, over onderwerpen zoals CO2 uitstoot, elektrisch rijden en de klimaatbestendigde stad.
+    Dit dashboard gaat over de elektrische laadpalen in Nederland, en laat zien waar laadpalen staan en hoe ze gebruikt worden. Wist je bijvoorbeeld dat elektrische auto's gemiddeld 3x zo lang verbonden zijn met 
+    de laadpaal dan dat ze daadwerkelijk opladen? En dat de stad met de meeste laadpalen Den Haag is, gevolgd door Amsterdam en Rotterdam?`,
     gallery_text_1: 
-    `Title. There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, 
-    by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of 
-    Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text. `
+    `Spitsuur. Wanneer wordt er het meest opgeladen? Volgens onze dataset met een sample van 10186 laadsessies, is het om 7 uur 's ochtends het drukst. Om 1 uur 's nachts is het daarentegen het rustigst, met slechts 4 oplaadsessies. 
+    Er lijken pieken te zijn wanneer mensen 's morgens de deur uitgaan (06:00-08:00), tijdens de lunch (11:00) en aan het einde van de werkdag (16:00).`
     ,
-    gallery_text_2: 
-    `Title. There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, 
-    by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of 
-    Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text. `
+    gallery_text_2:
+    `Locaties. Met een kaart weergeven we de verdeling van laadpalen over Nederland in een bepaald jaar. Het jaar is aan te passen met een slider om te zien hoe de verdeling verandert. 
+    Tussen 2012 en 2014 werden er bijvoorbeeld vooral in Zuid-Holland en Brabant veel nieuwe laadpalen geregistreerd, daarna kwamen er ook in Zuid-Holland een flink aantal bij.
+    Er kan ingezoomd worden op een specifieke provincie om de verdeling van laadpalen binnen dit gebied te zien.`
     ,
     gallery_text_3: 
-    `Title. There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, 
-    by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of 
-    Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text. `
+    `Voertuigen. Wat voor voertuigen maken gebruik van deze laadpalen? Deze histogram laat de verdeling zien van de meest voorkomende elektrische automerken op basis van de voertuigenregistratie.
+    De meest voorkomende merken zijn de Tesla Model 3 en Tesla Model Y, meestal in het zwart of wit. De kans is dus groot dat je deze auto wel eens bij een laadpaal hebt zien staan.`
     },
   ]
   
   const location = useLocation();
   
-  // const GetProject = () => {
-  //   let { project } = useParams();
-  //   console.log(project);
-  //   const currentProject = projects.find((x) => x.name === project);
-  //   return <Single project={currentProject} key={currentProject.name} />;
-  // };
-
   const GetProject = () => {
     const { project } = useParams();
-    console.log('Project is: ', project);
-  
     const currentProject = projects.find((x) => x.name === project);
     if (!currentProject) {
       // Handle case when project is not found, for example, redirect to a 404 page
@@ -151,13 +137,8 @@ function App() {
     <div className="App">
       <AnimatePresence initial={true} mode='wait'>
           <Routes location={location} key={location.pathname}>
-            
-            {/* <Route path='/' element={<Home projects={projects} />}/>
-            <Route path='/:project' element={<GetProject />}/> */}
-            
             <Route path={`${process.env.PUBLIC_URL}/`} element={<Home projects={projects} />} />
             <Route path={`${process.env.PUBLIC_URL}/:project`} element={<GetProject />} />
-            
           </Routes>
         </AnimatePresence>
     </div>
