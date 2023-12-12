@@ -128,10 +128,8 @@ const Laptop = forwardRef(({ hoveredCard, gltf }, ref) => {
       
       // Function to calculate new colors based on scroll position
       const calculateNewColor = (percentage) => {
-        // const startColors = ['#a9c6ff', '#c5d3ff', '#dce0fe', '#efeffe', '#ffffff']; // Blue
-        // const endColors = ['#fff7d6', '#fff4e4', '#fff5f6', '#fffbff', '#ffffff']; // Yellow
+        const startColors = ['#fffae5', '#fff8ee', '#fff9f9', '#fffcff', '#ffffff']; // Yellow
         const endColors = ['#a9c6ff', '#c5d3ff', '#dce0fe', '#efeffe', '#ffffff']; // Blue
-        const startColors = ['#fff7d6', '#fff4e4', '#fff5f6', '#fffbff', '#ffffff']; // Yellow
         const interpolatedColors = startColors.map((startColor, index) => {
           return chroma.scale([startColor, endColors[index]])(percentage / 100).hex();
         });
@@ -228,7 +226,8 @@ function Home(projects) {
         // With pages={3} it takes 3 pages of scrolling to finish the animation
       }
         <Canvas shadows className='canvas' id='canvas' camera={({position: [-1, 1, 10], fov: 50})} 
-          style={{backgroundImage: 'radial-gradient(circle, #a9c6ff, #c5d3ff, #dce0fe, #efeffe, #ffffff'}}
+          // style={{backgroundImage: 'radial-gradient(circle, #a9c6ff, #c5d3ff, #dce0fe, #efeffe, #ffffff'}}
+          style={{backgroundImage: 'radial-gradient(circle, #fffae5, #fff8ee, #fff9f9, #fffcff, #ffffff'}}
         >
           <SoftShadows />
           <mesh rotation={[-Math.PI / 2, 0, 0]} position={[0, -3, 0]} receiveShadow >
