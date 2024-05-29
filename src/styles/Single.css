@@ -21,7 +21,8 @@
 .gallery-item {
     display: flex;
     flex-direction: row;
-    align-items: center;
+    /* align-items: center; */
+    align-items: flex-start;
     width: 90vw;
     margin: auto;
 }
@@ -70,13 +71,15 @@
 }
 
 .gallery-item div {
-    height: 75vh;
+    min-height: 75vh;
+    height: initial;
     align-items: center;
 }
 
 .gallery-image {
     opacity: 0;
-    transform: translateY(-50px); 
+    /* transform: translateY(-50px); */ /* when aligned to center */
+    transform: translateY(-100px); /* when aligned to flex-start */
     width: 50vw; 
     height: auto;
 }

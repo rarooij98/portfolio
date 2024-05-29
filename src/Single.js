@@ -124,21 +124,21 @@ const Project = ({ project }) => {
   };
   
   // Styles the description text
-  const DescriptionStyling = () => {
-    var elements = document.querySelectorAll('.gallery-text p');
-    elements.forEach(function(element) {
-      // Replace the first period with an empty string
-      var textContent = element.textContent;
-      var newHtml = textContent.replace('.', '');
-      // Split the modified string at the first space
-      var spaceIndex = newHtml.indexOf(' ');
-      var parts = spaceIndex !== -1 ? [newHtml.substring(0, spaceIndex), newHtml.substring(spaceIndex + 1)] : [newHtml];
-      // Create a new HTML with the first part wrapped in a span and concatenate the second part
-      var finalHtml = '<span class="description-title">' + parts[0] + '</span>' + (parts[1] ? ' ' + parts[1] : '');
-      element.innerHTML = finalHtml;
-    });
-  }
-  DescriptionStyling();
+  // const DescriptionStyling = () => {
+  //   var elements = document.querySelectorAll('.gallery-text p');
+  //   elements.forEach(function(element) {
+  //     // Replace the first period with an empty string
+  //     var textContent = element.textContent;
+  //     var newHtml = textContent.replace('.', '');
+  //     // Split the modified string at the first space
+  //     var spaceIndex = newHtml.indexOf(' ');
+  //     var parts = spaceIndex !== -1 ? [newHtml.substring(0, spaceIndex), newHtml.substring(spaceIndex + 1)] : [newHtml];
+  //     // Create a new HTML with the first part wrapped in a span and concatenate the second part
+  //     var finalHtml = '<span class="description-title">' + parts[0] + '</span>' + (parts[1] ? ' ' + parts[1] : '');
+  //     element.innerHTML = finalHtml;
+  //   });
+  // }
+  //DescriptionStyling();
 
   return (
     <div id='Single'>
@@ -227,7 +227,13 @@ const Project = ({ project }) => {
               </h2>
               <p>
                 {project.description}
-                <a href={project.link} target='_blank' rel='noreferrer' className="button" style={{backgroundColor: project.color}}>{project.linktext}</a>
+                <a href={project.downloadLink || project.link} 
+                  target={project.downloadLink ? undefined : '_blank'}
+                  rel={project.downloadLink ? undefined : 'noreferrer'}
+                  className="button" 
+                  style={{ backgroundColor: project.color }}
+                  download={project.downloadLink ? true : undefined}>{project.linktext}
+                </a>
               </p>
             </div>
           </div>
